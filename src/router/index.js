@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import BlogFeed from "../screens/BlogFeed";
 import PostPage from "../screens/PostPage";
 import UserProfile from "../screens/UserProfile";
+import LoginPage from "../screens/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <UserProfile />
+  },
+  {
+    path: '/login',
+    element: <LoginPage />
   }
 ]);
 
