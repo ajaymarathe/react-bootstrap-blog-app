@@ -1,10 +1,19 @@
 import React from "react";
 import { Container, Button, Card } from "react-bootstrap";
+import { auth, provider, signInWithPopup } from "../firebase";
 
 function LoginPage() {
   const handleGoogleLogin = () => {
-    // Logic for Google login can be added here
-    console.log("Google login button clicked");
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // Successful login, handle the result
+        const user = result.user;
+        console.log("User Info:", user);
+      })
+      .catch((error) => {
+        // Handle login errors here
+        console.error("Google Login Error:", error);
+      });
   };
 
   return (
