@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Form, FormControl, Button, NavDropdown, Image } from 'react-bootstrap';
 
 function AppNavbar() {
   return (
@@ -15,6 +15,24 @@ function AppNavbar() {
             <FormControl type="search" placeholder="Search" className="me-2" />
             <Button variant="outline-success">Search</Button>
           </Form>
+          <Nav className="ml-auto">
+            <NavDropdown
+              title={
+                <Image
+                  src="https://via.placeholder.com/150"
+                  roundedCircle
+                  style={{ width: '40px', height: '40px' }}
+                  alt="Profile"
+                />
+              }
+              id="profile-dropdown"
+              align="end"
+            >
+              <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
